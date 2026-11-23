@@ -71,7 +71,7 @@ ouvre directement la page XGIMI). Gardée ici comme source.
   les autres apps en dessous (flèche bas). Boutons ronds sans texte (`icon_only_buttons`, `icon_only_inputs`,
   `wifi_label_width: 0`), dock à 70 % d'opacité.
 - Fond : les 51 tableaux, préparés par `tools/wallpaper_prep.py <dossier> mon-mogo4/theme/wallpapers --brightness 0.45`
-  (1280×720, < 300 Ko, ≈ 2 Mo en mémoire), un nouveau toutes les heures avec sa légende (`wallpapers/captions.txt`).
+  (1280×720, < 300 Ko, ≈ 2 Mo en mémoire), un nouveau toutes les heures, sans légende (`wallpaper_captions: false` ; `wallpapers/captions.txt` gardé pour la réactiver).
   Les .jpg ne sont pas dans git : les régénérer depuis les liens de [aerial/CREDITS.md](aerial/CREDITS.md).
 - `key_filter: true`, `stock_home_redirect: com.google.android.apps.tv.launcherx`.
 - Touche **Shortcut** (`KEY_F14`, scancode 184) : appui court = couper le son ;

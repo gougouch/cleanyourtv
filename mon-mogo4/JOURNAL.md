@@ -184,3 +184,4 @@ Méthode : une seule liste `mon-mogo4/debloat.txt` ; les lots à venir sont pré
 | 16:40 | essai `always_show_names: true` | n'enlève pas l'aperçu de la rangée suivante (la bande du dock grandit vers le haut) → retiré, thème renvoyé |
 | 16:41 | lecture de MainActivity.java (placement du dock) | l'aperçu vient du calcul fixe `BOTTOM_ROOM_DP = 30` sous le dock : aucun réglage de thème ne le supprime (seulement une modification du code du launcher) |
 | 16:50 | Aerial Views, une touche à la fois avec capture : sources Apple (139 vidéos), Amazon (85), Jetson Creative (20), Robin Fourcade (18) | **les 4 étaient actives** (streaming réseau) → toutes désactivées ; reste la source locale (51 tableaux) : démarrage/sortie plus rapides, plus de Wi-Fi |
+| 16:55 | `config.json` : wallpaper_captions false ; `tools/theme.sh` | légende du tableau retirée de l'accueil (capture shots/home-sans-legende.png) |

@@ -24,7 +24,7 @@
   ],
   "wallpaper_rotation_minutes": 60,
   "wallpaper_order": "shuffle",
-  "wallpaper_captions": true,
+  "wallpaper_captions": false,
   "wallpaper_dim": 0,
   "dock_opacity": 70,
   "icon_only_buttons": true,

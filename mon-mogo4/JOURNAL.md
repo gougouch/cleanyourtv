@@ -162,3 +162,22 @@ Méthode : une seule liste `mon-mogo4/debloat.txt` ; les lots à venir sont pré
 | 15:24 | après reboot, uptime 184 s, Paramètres ouverts (mêmes conditions qu'en Phase 1) : `/proc/meminfo`, `dumpsys meminfo`, paquets, settings → backup/apres/ | **MemAvailable 683 100 kB (≈667 Mo) contre 607 676 kB (≈593 Mo) avant : +74 Mo** ; 21 paquets désactivés, 14 apps utilisateur |
 | 15:24 | état après reboot | HomeKeyService lié ; démarrage : FallbackHome → launcherx (2 s) → tvhome ; animations 0.5 ; économiseur Aerial Views 6 min, veille 25 min |
 | 15:25 | Netflix : `cmd appops get … RUN_ANY_IN_BACKGROUND` = ignore, mais relancé au démarrage (`BootCompleteReceiver` puis `SystemJobService`, adj 800 « service B ») | Netflix est dans la **liste blanche système** deviceidle (firmware) : la restriction ne tient qu'entre deux redémarrages ; laissée en place (sans effet négatif) |
+| 15:35 | scan des fichiers à commiter (IP, chemins, e-mail) ; IP remplacées par `<ip projecteur>` / `<ip box>` dans ce journal | aucun identifiant restant ; backup/, work/, shots/, build exclus par .gitignore |
+| 15:36 | `git checkout -b mogo4-gougouch` ; commit `mon-mogo4/` ; `git push -u origin mogo4-gougouch` | commit 693936e0 poussé sur le fork |
+
+## Optimisations supplémentaires, demande utilisateur (2026-11-23)
+
+| Heure | Commande | Résultat |
+|---|---|---|
+| 15:45 | TROUBLESHOOTING « Streaming apps take 10–20 seconds » lu | `cmd package compile -m speed -f <app>` (−30 à −50 % mesurés sur une Philips MediaTek), annulation `compile --reset` |
+| 15:47 | ouverture à froid ×2 (`am start -W -S`, TotalTime) avant compilation → backup/apres/perf-cold-start-avant-compile.txt | toutes `status=verify` (non compilées) ; Netflix 1083/857 ms, YouTube 1316/1044, Prime 1186/792, Canal 1711/1487, Stremio 4194/3284, Disney+ 1043/634, XStreaming 996/784 |
+| 15:55 | `cmd package compile -m speed -f` sur les 7 apps (arrière-plan) | en cours |
+| 15:55 | `pm disable --user 0 com.netflix.ninja/com.netflix.ninja.BootCompleteReceiver` | **refusé** : `SecurityException: Shell cannot change component state` |
+| 15:55 | `am set-standby-bucket com.netflix.ninja restricted` | sans effet : reste 5 (EXEMPTED, liste blanche système) ; démarrage aussi piloté par `com.mediatek.tv.service/com.mstar.netflixobserver.BootCompletedReceiver` → rien de plus faisable sans root, rien modifié |
+| 16:05 | compilation (boucle) | connexion expirée en cours de route ; 5/7 en `status=speed` (Netflix, YouTube, Prime, Canal, Stremio) ; Disney+ et XStreaming relancés en `nohup` sur le projecteur |
+| 16:08 | `tools/wallpaper_prep.py ~/tools/downloads/photos/selection mon-mogo4/theme/wallpapers --brightness 0.45` + captions.txt | 51 fonds 1280×720 (3,8 Mo), légendes « Titre — Artiste » ; .jpg exclus de git |
+| 16:10 | `config.json` : wallpaper true, rotation 60 min (shuffle), légendes, dock_opacity 70, rows_below_dock 1 ; `tools/theme.sh mon-mogo4/theme` | appliqué (md5 OK) ; capture shots/home-tableaux.png ; tvhome PSS 68 Mo (dont Graphics 27 Mo) |
+| 16:20 | `config.json` : rows_below_dock 0, icon_only_buttons, icon_only_inputs, wifi_label_width 0 ; `tools/theme.sh` | appliqué : dock seul, 3 boutons ronds sans texte, glow conservé ; ~4 % du haut de la rangée suivante dépasse en bas (aucune option pour le masquer) |
+| 16:22 | Disney+ et XStreaming compilés un par un | 7/7 `status=speed` |
+| 16:30 | ouverture à froid ×2 après compilation → backup/apres/perf-cold-start-apres-compile.txt | Netflix 1258/866, YouTube 1464/1048, Prime 1396/876, Canal 2600/1768, Stremio 3529/2777, Disney+ 1349/980, XStreaming 1239/837 → **pas de gain mesurable** (sauf Stremio ≈ −15 %), écarts dans le bruit de mesure |
+| 15:56 | `cmd package compile --reset` sur Netflix, YouTube, Prime, Canal, Disney+, XStreaming (Stremio gardé en speed) | `Success` ×6 ; statuts : speed-profile (défaut Android) pour Netflix, YouTube, Prime, Canal, Disney+ ; verify pour XStreaming ; Stremio `speed` |

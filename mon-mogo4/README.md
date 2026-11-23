@@ -10,7 +10,7 @@ Fait le 2026-11-23. Le détail de chaque commande est dans [JOURNAL.md](JOURNAL.
 |---|---|---|
 | Mémoire disponible (MemAvailable, 3 min après le démarrage, Paramètres ouverts) | 593 Mo | **667 Mo (+74 Mo)** |
 | Paquets désactivés | 0 | 21 |
-| Accueil | Google TV (pubs, recommandations) | Clean Your TV, dock de 6 apps, fond noir fixe |
+| Accueil | Google TV (pubs, recommandations) | Clean Your TV : dock de 6 apps seul en bas, tableaux CC0 en fond (un par heure), boutons ronds sans texte |
 | Économiseur | Backdrop Google, 10 min | Aerial Views (vidéos 1080p + 51 tableaux du domaine public), 6 min |
 | Mise en veille | 30 min | 25 min |
 | Animations | 0.5 (d'usine) | 0.5 (inchangé) |
@@ -46,6 +46,10 @@ Gardés exprès : **setupwraith** (le Wi-Fi utilisé lui appartient : le désact
 **l'accueil Google `launcherx`** (XGIMI le réactive tout seul, la redirection du nouveau launcher
 tient Home), Disney+, et tout ce qui gère focus, trapèze, HDMI, télécommande, Chromecast, clavier, Play.
 
+Ouverture des apps : précompilation `cmd package compile -m speed` testée sur les 7 apps (mesures dans
+JOURNAL.md) : pas de gain mesurable sauf Stremio (≈ −15 %), seule app gardée précompilée ; les autres remises
+au mode par défaut (`compile --reset`).
+
 Autre réglage : Netflix interdit en arrière-plan (`appops RUN_ANY_IN_BACKGROUND ignore`). Netflix
 est dans la liste blanche système du firmware, donc il revient quand même à chaque démarrage.
 
@@ -63,7 +67,12 @@ ouvre directement la page XGIMI). Gardée ici comme source.
 
 ## Configuration du launcher : [theme/config.json](theme/config.json)
 
-- Dock : Netflix, YouTube, Prime Video, CANAL, Stremio, Disney+ (6 colonnes), fond noir.
+- Dock : Netflix, YouTube, Prime Video, CANAL, Stremio, Disney+ (6 colonnes), seul en bas (`rows_below_dock: 0`),
+  les autres apps en dessous (flèche bas). Boutons ronds sans texte (`icon_only_buttons`, `icon_only_inputs`,
+  `wifi_label_width: 0`), dock à 70 % d'opacité.
+- Fond : les 51 tableaux, préparés par `tools/wallpaper_prep.py <dossier> mon-mogo4/theme/wallpapers --brightness 0.45`
+  (1280×720, < 300 Ko, ≈ 2 Mo en mémoire), un nouveau toutes les heures avec sa légende (`wallpapers/captions.txt`).
+  Les .jpg ne sont pas dans git : les régénérer depuis les liens de [aerial/CREDITS.md](aerial/CREDITS.md).
 - `key_filter: true`, `stock_home_redirect: com.google.android.apps.tv.launcherx`.
 - Touche **Shortcut** (`KEY_F14`, scancode 184) : appui court = couper le son ;
   appui long = page XGIMI « Mode luminosité » (`com.xgimi.misckey/.activity.GtvBrightnessActivity`).

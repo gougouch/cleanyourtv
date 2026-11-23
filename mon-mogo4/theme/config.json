@@ -11,7 +11,7 @@
   "rows_below_dock": 0,
   "live_tv_package": "",
   "background_color": "#000000",
-  "wallpaper": false,
+  "wallpaper": true,
   "sky_intensity": 0,
   "settings_key_keycodes": [
     83
@@ -21,5 +21,13 @@
   "app_keys": [
     "scan:184:mute",
     "hold:scan:184:com.xgimi.misckey/.activity.GtvBrightnessActivity"
-  ]
+  ],
+  "wallpaper_rotation_minutes": 60,
+  "wallpaper_order": "shuffle",
+  "wallpaper_captions": true,
+  "wallpaper_dim": 0,
+  "dock_opacity": 70,
+  "icon_only_buttons": true,
+  "icon_only_inputs": true,
+  "wifi_label_width": 0
 }

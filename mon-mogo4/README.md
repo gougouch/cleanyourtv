@@ -85,7 +85,8 @@ ouvre directement la page XGIMI). Gardée ici comme source.
 - `screensaver_components = com.neilturner.aerialviews/.ui.screensaver.DreamActivity`
 - `screen_off_timeout = 360000` (6 min : le minimum sur Google TV, 5 min ne démarre jamais)
 - `sleep_timeout = 1500000` (veille à 25 min)
-- Dans l'app : vidéos en 1080p HEVC (SDR), horloge seule ; source « Stockage local » filtrée sur
+- Dans l'app : **tableaux seuls** (sources vidéo Apple, Amazon, Jetson, Robin Fourcade désactivées : démarrage et sortie
+  plus rapides, aucun streaming), horloge seule ; source « Stockage local » filtrée sur
   le dossier `Economiseur` (`/sdcard/Pictures/Economiseur`, 51 œuvres CC0 : [aerial/CREDITS.md](aerial/CREDITS.md)).
 - Photos copiées par ADB : lancer un scan média, sinon l'app ne les voit pas
   (`am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Pictures/Economiseur/<fichier>`).

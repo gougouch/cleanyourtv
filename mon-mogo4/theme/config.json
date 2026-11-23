@@ -29,5 +29,8 @@
   "dock_opacity": 70,
   "icon_only_buttons": true,
   "icon_only_inputs": true,
-  "wifi_label_width": 0
+  "wifi_label_width": 0,
+  "wifi_status_color": true,
+  "wifi_status_warnings": true,
+  "show_greeting": false
 }

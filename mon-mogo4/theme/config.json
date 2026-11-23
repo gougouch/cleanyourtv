@@ -1,0 +1,25 @@
+{
+  "dock_apps": [
+    "com.netflix.ninja",
+    "com.google.android.youtube.tv",
+    "com.amazon.amazonvideo.livingroom",
+    "com.canal.android.canal",
+    "com.stremio.one",
+    "com.disney.disneyplus"
+  ],
+  "columns": 6,
+  "rows_below_dock": 0,
+  "live_tv_package": "",
+  "background_color": "#000000",
+  "wallpaper": false,
+  "sky_intensity": 0,
+  "settings_key_keycodes": [
+    83
+  ],
+  "key_filter": true,
+  "stock_home_redirect": "com.google.android.apps.tv.launcherx",
+  "app_keys": [
+    "scan:184:mute",
+    "hold:scan:184:com.xgimi.misckey/.activity.GtvBrightnessActivity"
+  ]
+}

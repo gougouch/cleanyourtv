@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Luminosité</string>
+    <string name="page_introuvable">Page « Mode luminosité » introuvable (mise à jour XGIMI ?)</string>
+</resources>

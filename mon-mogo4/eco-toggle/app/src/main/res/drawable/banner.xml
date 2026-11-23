@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Bannière 320x180 : soleil doré sur fond nuit, pour le dock et la grille. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+    <path android:fillColor="#1B2233" android:pathData="M0,0h320v180h-320z" />
+    <!-- rayons -->
+    <path android:strokeColor="#F5B841" android:strokeWidth="8" android:strokeLineCap="round"
+        android:pathData="M160,30 L160,48 M160,132 L160,150 M100,90 L118,90 M202,90 L220,90
+                          M117.6,47.6 L130.3,60.3 M189.7,119.7 L202.4,132.4
+                          M117.6,132.4 L130.3,119.7 M189.7,60.3 L202.4,47.6" />
+    <!-- disque : moitié pleine, moitié contour (Éco / Standard) -->
+    <path android:fillColor="#F5B841"
+        android:pathData="M160,62 A28,28 0 0,0 160,118 Z" />
+    <path android:strokeColor="#F5B841" android:strokeWidth="6" android:fillColor="#00000000"
+        android:pathData="M160,62 A28,28 0 1,1 160,118 A28,28 0 1,1 160,62 Z" />
+</vector>

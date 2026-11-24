@@ -10,7 +10,7 @@ Fait le 2026-11-23. Le détail de chaque commande est dans [JOURNAL.md](JOURNAL.
 |---|---|---|
 | Mémoire disponible (MemAvailable, 3 min après le démarrage, Paramètres ouverts) | 593 Mo | **667 Mo (+74 Mo)** |
 | Paquets désactivés | 0 | 21 |
-| Accueil | Google TV (pubs, recommandations) | Clean Your TV : dock de 6 apps seul en bas, tableaux CC0 en fond (un par heure), boutons ronds sans texte |
+| Accueil | Google TV (pubs, recommandations) | Clean Your TV : dock de 6 apps seul en bas, photos de paysages en fond (une par heure), boutons ronds sans texte |
 | Économiseur | Backdrop Google, 10 min | Aerial Views (vidéos 1080p + 51 tableaux du domaine public), 6 min |
 | Mise en veille | 30 min | 25 min |
 | Animations | 0.5 (d'usine) | 0.5 (inchangé) |
@@ -70,10 +70,10 @@ ouvre directement la page XGIMI). Gardée ici comme source.
 - Dock : Netflix, YouTube, Prime Video, CANAL, Stremio, Disney+ (6 colonnes), seul en bas (`rows_below_dock: 0`),
   les autres apps en dessous (flèche bas). Boutons ronds sans texte (`icon_only_buttons`, `icon_only_inputs`,
   `wifi_label_width: 0`), dock à 70 % d'opacité.
-- Fond : les 51 tableaux, préparés par `tools/wallpaper_prep.py <dossier> mon-mogo4/theme/wallpapers --brightness 0.70 --gradient 0.45`
-  (1280×720, < 300 Ko, ≈ 2 Mo en mémoire), un nouveau toutes les heures, sans légende (`wallpaper_captions: false` ; `wallpapers/captions.txt` gardé pour la réactiver).
-  Les .jpg ne sont pas dans git : les régénérer depuis les liens de [aerial/CREDITS.md](aerial/CREDITS.md).
-- `key_filter: true`, `stock_home_redirect: com.google.android.apps.tv.launcherx`.
+- Fond : 41 photos de paysages sous licence libre reprises des thèmes du dépôt (nature, villes, espace),
+  préparées avec `tools/wallpaper_prep.py` (jour 0.70, nuit 1.0, dégradé bas 0.45), une nouvelle par heure, sans légende.
+  Liste et origine : [theme/CREDITS-fonds.md](theme/CREDITS-fonds.md). Les .jpg ne sont pas dans git.
+  Les tableaux CC0 restent dans l'économiseur Aerial Views.
 - Touche **Shortcut** (`KEY_F14`, scancode 184) : appui court = couper le son ;
   appui long = page XGIMI « Mode luminosité » (`com.xgimi.misckey/.activity.GtvBrightnessActivity`).
   Le mode Éco/Standard n'est stocké dans aucun réglage Android (vérifié par diff), d'où la page.

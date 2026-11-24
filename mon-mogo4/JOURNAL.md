@@ -194,3 +194,5 @@ Méthode : une seule liste `mon-mogo4/debloat.txt` ; les lots à venir sont pré
 | 17:48 | utilisateur : ordre du dock choisi par lui (gardé), estampes gardées | — |
 | 17:49 | météo : add-on `addons/weather` (Open-Meteo, INTERNET, tuile + page plein écran) ; `docs/modules.md` | aucune zone « degrés à côté de l'heure » sans code (le panneau sous l'horloge est réservé à game_day/F1) |
 | 17:50 | `config.json` : wifi_status_color, wifi_status_warnings, show_greeting false ; `tools/theme.sh` | appliqué : icône Wi-Fi verte, « BONSOIR » retiré, horloge remontée (capture shots/home-wifi-vert.png) |
+| 21:45 | inspiration `themes/ambient-glass` ; `wallpaper_prep.py … --brightness 0.65 --gradient 0.45` | 51 fonds régénérés, plus lumineux (5,4 Mo) |
+| 21:48 | `config.json` : glow_style horizon, dock_glass, dock_opacity 40, dock_even_padding, single_row ; `tools/theme.sh` | appliqué : plus de rangée visible sous le dock (les autres apps à droite), dock en verre dépoli, lueur venant du haut ; pas de réglage d'intensité de lueur dans le launcher |

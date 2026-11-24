@@ -26,11 +26,15 @@
   "wallpaper_order": "shuffle",
   "wallpaper_captions": false,
   "wallpaper_dim": 0,
-  "dock_opacity": 70,
+  "dock_opacity": 40,
   "icon_only_buttons": true,
   "icon_only_inputs": true,
   "wifi_label_width": 0,
   "wifi_status_color": true,
   "wifi_status_warnings": true,
-  "show_greeting": false
+  "show_greeting": false,
+  "glow_style": "horizon",
+  "dock_glass": true,
+  "dock_even_padding": true,
+  "single_row": true
 }
